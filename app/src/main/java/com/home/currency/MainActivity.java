@@ -31,15 +31,15 @@ public class MainActivity extends AppCompatActivity {
         String strNTD = editNTD.getText().toString();
 
         if ("".equals(strNTD)) {
-            new AlertDialog.Builder(this).setTitle("Problem").setMessage("Please enter your NTD amount").
-                    setPositiveButton("OK", null).show();
+            new AlertDialog.Builder(this).setTitle(R.string.problem).setMessage(R.string.please_enter_ntd).
+                    setPositiveButton(R.string.ok, null).show();
 
         } else {
             float floatNTD = Float.valueOf(strNTD);
             float result = floatNTD / USDRate;
             Log.d(TAG, "USD is " + result);
-            new AlertDialog.Builder(this).setTitle("Result").setMessage("USD is " + result).
-                    setPositiveButton("OK", null).show();
+            new AlertDialog.Builder(this).setTitle(R.string.result).setMessage(getString(R.string.usd_is) + result).
+                    setPositiveButton(R.string.ok, null).show();
 
         }
     }
